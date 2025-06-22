@@ -1,0 +1,78 @@
+\ProvidesPackage{print-geometry}
+\RequirePackage[svgnames]{xcolor}
+\RequirePackage{be-my-concrete}
+
+% Fonts
+% \setmainfont{Monofur Nerd Font}
+\setmathfont{Cambria Math}
+
+% Main sizes
+\RequirePackage[
+	a4paper,
+    margin = 1cm,
+    top = 1.5cm,
+    headsep = 7mm,
+	footnotesep = 5mm
+]{geometry}
+
+
+% Misc
+\def\columnseprulecolor{\color{Navy}}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{1pt}
+\interfootnotelinepenalty=10000000
+\counterwithin*{footnote}{page}
+
+
+% Fancy...
+\RequirePackage{fancyhdr, hyperref}
+
+%\def\headrule{{              % double ruler in header             
+%		\if@fancyplain\let\headrulewidth \plainheadrulewidth \fi
+%		\hrule\@height\headrulewidth height 0.5pt\@width\headwidth\vskip 2pt %
+%		\hrule\@height\headrulewidth height 1pt \@width \headwidth\vskip-\headrulewidth\vskip-4pt %height2pt
+%}}
+
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{
+    Алгебра-0,5
+}
+
+\newcommand{\namenumberpage}[2]{
+    \fancyhead[R]{
+        Листок №#2. 
+        #1.
+    }
+}
+
+% \fancyhead[RO, LE]{
+% 	\nouppercase{\leftmark \\
+% 		\rightmark}
+% }
+
+\fancyfoot{}
+
+
+
+% datepage
+\DeclareOption{datepage}{
+	\newcommand{\makedate}[1]{\fancypagestyle{date}
+		{\fancyhead{}
+			\fancyhead[RO]{
+				\href{https://t.me/egorrshuk}{егоррррршук} \\
+			}
+			\fancyhead[LO, RE]{
+				\nouppercase{\leftmark \\
+					\rightmark}
+			}
+			\fancyfoot{}
+			
+			\fancyfoot[LO, RE]{\thepage}
+			\fancyfoot[LE, RO]{#1}
+		}
+		\thispagestyle{date}
+	}
+}
+\ProcessOptions\relax

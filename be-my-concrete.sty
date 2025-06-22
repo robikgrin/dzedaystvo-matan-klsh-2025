@@ -1,0 +1,185 @@
+\ProvidesPackage{be-my-concrete}
+
+% Fonts
+\RequirePackage{fontspec}
+\RequirePackage[T2A]{fontenc}
+\RequirePackage[russian]{babel}
+\setsansfont{Comic Sans MS}
+\setmonofont{BigBlueTermPlus Nerd Font}
+\setmainfont{UbuntuMono Nerd Font}
+\usepackage{unicode-math}
+\setmathfont{Fira Math}
+
+% Etc. Packages
+\RequirePackage{graphicx, multicol, import, epigraph, coffeestains, indentfirst}
+\RequirePackage[svgnames]{xcolor}
+\usepackage{tocloft}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}} % Обновляем формат нумерации
+%\coffeestainA{0.3}{0.7}{-25}{3cm}{1.3cm}
+
+\usepackage{asymptote}
+\begin{asydef}
+    settings.outformat = "pdf";
+    import geometry;
+	settings.render = 0;
+    pen hpen = deepgreen+6;
+\end{asydef}
+\def\asydir{asy}
+
+
+
+% Hyperref
+\RequirePackage[
+	colorlinks=true,
+	linkcolor=Crimson,
+	urlcolor=Navy,
+	pdftitle={Матанализ для физиков},
+	pdfauthor={Гринштейн Роберт Алексеевич},
+]{hyperref}
+
+
+
+
+% Math Packages
+\RequirePackage{amsmath, amsthm, amsfonts, unicode-math}
+\RequirePackage{witharrows}
+%\begin{DispWithArrows}[displaystyle, wrap-lines, tagged-lines = last, fleqn, mathindent = 0 pt]
+
+%\end{DispWithArrows}
+
+%% Theorems
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{proposition}[theorem]{Утверждение}
+\newtheorem{corollary}{Следствие}[theorem]
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Определение}
+\newtheorem{prac}{Упражнение}
+\counterwithin*{prac}{section}
+\theoremstyle{remark}
+\newtheorem*{rem}{Замечание}
+\newtheorem{example}{Пример}
+\counterwithin*{example}{section}
+\counterwithin{equation}{section}
+
+\newenvironment{remark}[1][]{%
+    \noindent\begin{minipage}{\linewidth}%
+        \footnotesize
+        \begin{rem}[#1]%
+        }{%
+        \end{rem}%
+    \end{minipage}%
+
+    \vspace{0.5em}%
+}
+\newenvironment{practice}[1][]{%
+    \noindent\begin{minipage}{\linewidth}%
+        \footnotesize
+        \begin{prac}[#1]%
+        }{%
+        \end{prac}%
+    \end{minipage}%
+
+    \vspace{0.5em}%
+}
+
+%% cleveref
+\RequirePackage[russian, noabbrev]{cleveref}
+\crefname{enumi}{задаче}{задачаx}
+\crefname{enumii}{задаче}{задачаx}
+\crefname{theorem}{теореме}{теоремах}
+\crefname{equation}{уравнении}{уравнение}
+\crefname{corollary}{следствии}{следствие}
+\crefname{definition}{определении}{определениe}
+\crefname{remark}{замечании}{замечание}
+\crefname{prac}{упражнении}{упражнение}
+\crefname{example}{примерe}{пример}
+\crefname{table}{таблице}{таблица}
+\crefname{figure}{рисунке}{рисунок}
+
+% Lists
+\RequirePackage[inline, shortlabels]{enumitem}
+
+\newlist{conditions}{enumerate}{2}
+
+\setlist[conditions, 1]{
+	label=(\roman{conditionsi}), %(i), (ii), (iii), ...
+	leftmargin=1cm,
+	rightmargin=.5cm
+}
+\setlist[conditions, 2]{
+	label=(\roman{conditionsi}.\alph{conditionsii}), % (i.a), (i.b), (i.c)
+	leftmargin=1cm,
+	rightmargin=.5cm
+}
+
+\newlist{inumerate}{enumerate*}{1}
+\setlist[inumerate, 1]{
+    label = (\alph{inumeratei}),
+    before=\unskip{: }, itemjoin={{;\quad}}, itemjoin*={{, и\quad}}
+}
+
+\newlist{bullets}{itemize}{3}
+
+\setlist[bullets, 1]{
+	label=$\circ$,
+	leftmargin=1cm,
+	rightmargin=.5cm
+}
+\setlist[conditions, 2]{
+	label=$\circ \circ$,
+	leftmargin=1cm,
+	rightmargin=.5cm
+}
+
+% \newlist{tasks}{enumerate}{2}
+% \setlist[tasks, 1]{
+% 	label={\textbf{Задача \arabic{tasksi}:}},
+% 	leftmargin = 1mm,
+% 	labelsep = 5mm,
+% 	itemindent = 2.05cm
+% }
+% \setlist[tasks, 2]{
+% 	label=(\arabic{tasksi}.\alph{tasksii}),
+% 	itemindent=6mm
+% }
+
+
+
+
+% Aliases
+%% \renewcommand
+\renewcommand{\C}{\mathbb C}
+\renewcommand{\bar}{\overline}
+\renewcommand{\vec}{\overrightarrow}
+
+%% \DeclareMathOperator
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Orb}{Orb}
+
+%% \newcommand
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\T}{\mathcal T}
+\newcommand{\powerset}[1]{\mathcal{P}(#1)}
+\newcommand{\defeq}{\overset{def}{=}}
+\makeatletter
+\newcommand*{\coloneq}{\mathrel{\rlap{%
+			\raisebox{0.3ex}{$\m@th\cdot$}}%
+		\raisebox{-0.3ex}{$\m@th\cdot$}}%
+	=}
+\newcommand*{\eqcolon}{=
+	\mathrel{\rlap{%
+			\raisebox{0.3ex}{$\m@th\cdot$}}%
+		\raisebox{-0.3ex}{$\m@th\cdot$}}%
+}
+\makeatother
+
+\newcommand{\ifandonly}{\Longleftrightarrow}

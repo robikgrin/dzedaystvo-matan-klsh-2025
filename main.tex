@@ -1,0 +1,37 @@
+\documentclass[10pt, twoside]{article}
+\usepackage{be-my-concrete, be-my-geometry}
+\usepackage{extra-algebra}
+\setcounter{MaxMatrixCols}{15}
+
+\begin{document}
+
+\pagestyle{empty}
+\input{sections/abstract.tex}
+\newpage
+
+\tableofcontents
+\newpage
+
+\setcounter{page}{1}
+\pagestyle{fancy}
+%советы для подопечных
+\input{sections/intro.tex}
+\newpage
+%первое занятие
+\input{sections/onevarfunc.tex}
+
+\newpage
+\renewcommand{\thesubsection}{\roman{subsection}}
+\setcounter{subsection}{0}
+\markboth{Задачи}{Задачи}
+\addcontentsline{toc}{section}{Задачи}
+\section*{Задачи}
+
+
+\newpage
+\markboth{Контрольная работа}{Контрольная работа}
+\addcontentsline{toc}{section}{Контрольная работа}
+\section*{Контрольная работа}
+% \input{tasks/exam.tex}
+
+\end{document}
