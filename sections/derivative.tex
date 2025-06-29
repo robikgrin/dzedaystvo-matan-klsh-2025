@@ -22,7 +22,7 @@
     \begin{equation*}
         z(t) = z_0 + vt
     \end{equation*}
-    тогда $\displaystyle\dot{z} = \lim_{\Delta t \rightarrow 0} \frac{z_0 + v(t + \Delta t) - vt}{\Delta t} = v = const$ - постоянная величина.
+    тогда $\displaystyle\dot{z} = \lim_{\Delta t \rightarrow 0} \frac{z_0 + v(t + \Delta t) - z_0 - vt}{\Delta t} = v = const$ - постоянная величина.
 \end{example}
 
 \subsection{Бесконечность не предел!}
@@ -68,6 +68,11 @@
         (f(g(x)))^{'} = \lim_{\Delta x \rightarrow 0} \frac{f(g(x + \Delta x)) - f(g(x))}{\Delta x} = \lim_{x \rightarrow 0}\frac{f(g + \Delta g) - f(g)}{\Delta g}\ \frac{\Delta g}{\Delta x} = \frac{df}{dg}\ \frac{dg}{dx} =\\
         = [f(g)]^{'}_{g} g^{'}
     \end{multline*}
+    \item \textbf{Производная обратной функции}
+    Потребуем только, чтобы $y=f(x)$ была строго монотонной, то есть если $x_2 > x_1$, то $f(x_2) > или < f(x_1)$. Так как между $x$ и $f$ есть однозначное соответствие, то можно ввести функцию $x = g(y)$, то $\Delta x \rightarrow 0 \Rightarrow \Delta y \rightarrow 0$ и наоборот. Тогда 
+    \begin{equation*}
+        g^{'}(y) = \lim_{\Delta y \rightarrow 0} \frac{\Delta x}{\Delta y} = \lim_{\Delta y \rightarrow 0} \frac{1}{\frac{\Delta y}{\Delta x}} =\lim_{\Delta x \rightarrow 0} \frac{1}{\frac{\Delta y}{\Delta x}} = \frac{1}{f^{'}(x)}
+    \end{equation*}
 \end{itemize}
 Укажем \textbf{геометрический смысл} производной: если нарисовать график функции $z=z(t)$, то $\dot{z} = \tan \alpha$, где $\alpha$ — угол наклона касательной, проведённой к графику в точке $(t, z(t))$, к оси $t$.
 \begin{example}
@@ -75,11 +80,15 @@
     \begin{equation*}
         z(t) = z_0 + v_0t + \frac{at^2}{2}
     \end{equation*}
-    Тогда легко получить $\dot{z}= v_0 + at$, где $v_0$ - начальная скорость, $a$ - ускорение.
+    Тогда легко получить $\dot{z}= v_0 + at,\ \ddot{z} = a$, где $v_0$ - начальная скорость, $a$ - ускорение.
 \end{example}
 \begin{prac}
     Получи, что $(t^{n})^{'} = n t^{n-1},\ \forall n \in \mathbb{N}$ (подсказка\footnote{воспользуйся методом индукции})
 \end{prac}
+\begin{prac}
+    Найди производную функции $f(x) = \arctg x$.
+\end{prac}
+
 \subsection{Число $e$. Второй замечательный предел.}
 Когда мы уже разобрались с тем, что такое производная, то следует поговорить про примечательную функцию, с которой эта производная связана.
 
@@ -107,11 +116,18 @@
 \begin{equation*}
     \lim_{x \rightarrow 0} \frac{\sin x}{x}
 \end{equation*}
-Для пруфа этого утверждения посмотрим необходимый геометрический рисунок (\texttt{см. на доску}). Очевидно, что
+Для пруфа этого утверждения посмотрим необходимый геометрический рисунок. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{pics/first_great_lim.png}
+    \caption{Первый замечательный предел}
+\end{figure}
+
+Очевидно, что
 \begin{equation*}
-    S_{\Delta OKH} < S_{\text{сектор} OKH} < S_{\Delta OLH}
+    S_{\Delta OKH} < S_{\text{сектор}\ OKH} < S_{\Delta OLH}
 \end{equation*}
-Площади треугольников соответственно: $S_{\Delta OKH} = \frac{\sin x}{2}$, $S_{\text{сектор} OKH} = \frac{x}{2}$, $S_{\Delta OLH} = \frac{\tan x}{2}$. Таким образом
+Площади треугольников соответственно: $S_{\Delta OKH} = \frac{\sin x}{2}$, $S_{\text{сектор}\ OKH} = \frac{x}{2}$, $S_{\Delta OLH} = \frac{\tan x}{2}$. Таким образом
 \begin{equation*}
     \frac{\sin x}{x} < \frac{x}{2} < \frac{\tan x}{2} \Rightarrow 1 > \frac{\sin x}{x} > \frac{1}{\cos x}
 \end{equation*}
