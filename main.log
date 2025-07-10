@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.21)  30 JUN 2025 02:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.21)  10 JUL 2025 23:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/User/Desktop/VS code/tex_files/metodichka/dzedaystvo-matan-klsh2025/main"
-(/Users/User/Desktop/VS code/tex_files/metodichka/dzedaystvo-matan-klsh2025/main.tex
+**"/Users/User/Desktop/VS code/tex_files/metodichka/dzedaystvo-matan-klsh-2025/main"
+(/Users/User/Desktop/VS code/tex_files/metodichka/dzedaystvo-matan-klsh-2025/main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -69,10 +69,10 @@ l.101 \msg_fatal:nn {fontspec} {cannot-use-pdftex}
  
 Here is how much of TeX's memory you used:
  571 strings out of 473190
- 12469 string characters out of 5715800
+ 12472 string characters out of 5715800
  399444 words of memory out of 5000000
  23897 multiletter control sequences out of 15000+600000
  558837 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,0n,107p,335b,42s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,0n,107p,336b,42s stack positions out of 10000i,1000n,20000p,200000b,200000s
 /usr/local/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.sty:101:  ==> Fatal error occurred, no output PDF file produced!
