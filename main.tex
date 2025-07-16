@@ -1,9 +1,21 @@
 \documentclass[10pt, twoside]{article}
 \usepackage{be-my-concrete, be-my-geometry}
 \usepackage{extra-algebra}
+\usepackage{tikz}
 \setcounter{MaxMatrixCols}{15}
 
+
 \begin{document}
+
+\pagestyle{empty}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=north west] at (current page.north west)
+    {\includegraphics[width=\paperwidth,height=\paperheight]{poster.pdf}};
+\end{tikzpicture}
+
+\clearpage
 
 \pagestyle{empty}
 \input{sections/abstract.tex}
