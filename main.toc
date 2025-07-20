@@ -35,9 +35,9 @@
 \contentsline {section}{Задачи}{24}{prac.5.2}%
 \contentsline {subsection}{Функции одной переменной}{24}{section*.4}%
 \contentsline {subsection}{Производная}{25}{section*.5}%
-\contentsline {subsection}{Полезные применения производной. Ряд Тейлора.}{26}{section*.6}%
-\contentsline {paragraph}{Полезные применения производной}{26}{section*.7}%
-\contentsline {paragraph}{Ряд Тейлора}{27}{section*.8}%
-\contentsline {subsection}{Интегралы}{28}{section*.9}%
-\contentsline {subsection}{Диффуры, колебания и фазовые портреты}{30}{section*.10}%
-\contentsline {section}{Загон}{31}{section*.10}%
+\contentsline {subsection}{Полезные применения производной. Ряд Тейлора.}{27}{section*.6}%
+\contentsline {paragraph}{Полезные применения производной}{27}{section*.7}%
+\contentsline {paragraph}{Ряд Тейлора}{28}{section*.8}%
+\contentsline {subsection}{Интегралы}{29}{section*.9}%
+\contentsline {subsection}{Диффуры, колебания и фазовые портреты}{31}{section*.10}%
+\contentsline {section}{Загон}{32}{section*.10}%
